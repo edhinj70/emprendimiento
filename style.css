@@ -1,5 +1,5 @@
 /* ==========================================
-   RESET & VARIABLES
+   RESET & VARIABLES (mejoradas)
    ========================================== */
 * {
     margin: 0;
@@ -8,14 +8,16 @@
 }
 
 :root {
-    --primary-color: #ff5722;     /* Naranja vibrante para dar apetito */
+    --primary-color: #ff5722;
     --primary-hover: #e04818;
-    --dark-color: #121212;        /* Fondo oscuro elegante */
+    --dark-color: #0b0b0b;
     --light-color: #ffffff;
     --gray-light: #f4f4f4;
-    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    --gold: #e0a96d;
+    --card-shadow: 0 25px 50px -8px rgba(0, 0, 0, 0.8);
     --font-heading: 'Playfair Display', serif;
     --font-sans: 'Poppins', sans-serif;
+    --transition-smooth: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 html {
@@ -24,127 +26,242 @@ html {
 
 body {
     font-family: var(--font-sans);
-    background-color: #1a1a1a;
+    background-color: #0f0f0f;
     color: var(--light-color);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* ==========================================
-   HEADER / HERO SECTION
+   HEADER / HERO SECTION (impactante)
    ========================================== */
 .hero {
     position: relative;
-    height: 70vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 18, 18, 1)), 
-                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 20px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 87, 34, 0.15), transparent 70%),
+                linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 100%);
+    isolation: isolate;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+    opacity: 0.25;
+    z-index: -2;
+    filter: saturate(0.7) brightness(0.7);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 20px;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.hero-content .badge {
+    display: inline-block;
+    background: rgba(255, 87, 34, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 8px 24px;
+    border-radius: 60px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-color);
+    border: 1px solid rgba(255, 87, 34, 0.3);
+    margin-bottom: 20px;
 }
 
 .hero-content h1 {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content h1 span {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.hero-content h1 span::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 4px;
+    opacity: 0.6;
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     font-weight: 300;
-    color: #cccccc;
+    color: #cfcfcf;
+    max-width: 600px;
+    margin: 0 auto 35px;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
 }
 
 .btn-primary {
-    display: inline-block;
-    padding: 12px 35px;
-    background-color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 40px;
+    background: var(--primary-color);
     color: var(--light-color);
     text-decoration: none;
     font-weight: 600;
-    border-radius: 50px;
+    border-radius: 60px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+    box-shadow: 0 8px 30px rgba(255, 87, 34, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+    letter-spacing: 0.5px;
+}
+
+.btn-primary i {
+    font-size: 1.1rem;
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6);
+    background: var(--primary-hover);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 14px 40px rgba(255, 87, 34, 0.6);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    background: transparent;
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 60px;
+    border: 2px solid rgba(255,255,255,0.25);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--light-color);
+    transform: translateY(-4px);
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================
-   MENU CONTENEDOR & GRID
+   MENU SECCIÓN (mejorada)
    ========================================== */
 .menu-container {
-    padding: 80px 20px;
-    max-width: 1200px;
+    padding: 90px 20px 80px;
+    max-width: 1280px;
     margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header .subtitle {
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
 }
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 2.8rem;
-    text-align: center;
-    margin-bottom: 50px;
+    font-size: clamp(2.5rem, 5vw, 3.4rem);
+    font-weight: 700;
     position: relative;
+    display: inline-block;
 }
 
 .section-title::after {
     content: '';
-    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: var(--primary-color);
-    margin: 15px auto 0;
-    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    border-radius: 4px;
 }
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 45px;
     justify-content: center;
 }
 
 /* ==========================================
-   3D CARD FLIP EFECTO (Solo CSS)
+   3D CARD FLIP (mejorado)
    ========================================== */
 .card-container {
-    perspective: 1000px; /* Determina la profundidad 3D */
-    height: 450px;
+    perspective: 1200px;
+    height: 480px;
+    cursor: default;
 }
 
 .card {
     position: relative;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d; /* Permite a los hijos mantener el 3D */
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 24px;
     box-shadow: var(--card-shadow);
 }
 
-/* El gatillo para girar la tarjeta al pasar el cursor o al interactuar */
 .card-container:hover .card,
 .card-container:focus-within .card {
     transform: rotateY(180deg);
 }
 
-/* Estructura común para ambas caras */
 .card-face {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Oculta la cara que está de espaldas */
-    border-radius: 20px;
+    backface-visibility: hidden;
+    border-radius: 24px;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -155,112 +272,182 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    background-color: #1a1a1a;
+    background-blend-mode: overlay;
 }
 
-/* Degradado oscuro para que el texto inicial se lea perfectamente */
-.card-overlay {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.2) 100%);
-    padding: 30px;
+.card-front .card-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 10%, rgba(0, 0, 0, 0.2) 100%);
+    padding: 30px 28px;
     width: 100%;
+    transition: all 0.3s ease;
 }
 
-.card-info h3 {
-    font-size: 1.6rem;
-    margin-bottom: 8px;
-    font-weight: 600;
+.card-front .card-info h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
 }
 
-.price {
-    display: block;
-    font-size: 1.4rem;
+.card-front .card-info .price {
+    display: inline-block;
+    font-size: 1.5rem;
     color: var(--primary-color);
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 18px;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
 }
 
-/* Botón transparente */
 .btn-detail {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.06);
     color: var(--light-color);
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    padding: 10px 25px;
-    border-radius: 30px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 20px;
+    border-radius: 50px;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    backdrop-filter: blur(4px);
 }
 
 .btn-detail:hover {
-    background-color: var(--light-color);
+    background: var(--light-color);
     color: var(--dark-color);
     border-color: var(--light-color);
+    transform: scale(1.02);
 }
 
 /* CARA TRASERA */
 .card-back {
-    transform: rotateY(180deg); /* Se inicializa volteada */
+    transform: rotateY(180deg);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Filtro oscurecido drástico solicitado para resaltar los textos */
 .card-back::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Capa muy oscura de fondo */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(3px);
     z-index: 1;
+    border-radius: 24px;
 }
 
-/* Contenedor del contenido trasero por encima del fondo oscuro */
 .card-back-content {
     position: relative;
     z-index: 2;
-    padding: 30px;
+    padding: 30px 28px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     height: 100%;
+    gap: 12px;
+}
+
+.card-back-content .icon-plate {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+    margin-bottom: 5px;
 }
 
 .card-back-content h3 {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .card-back-content p {
     font-size: 0.95rem;
-    color: #e0e0e0;
+    color: #d0d0d0;
     font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    overflow-y: auto; /* Evita desbordamiento de texto largo */
+    line-height: 1.7;
+    max-width: 280px;
+    margin: 0 auto;
 }
 
-/* Conservando el estilo de precio idéntico en la parte trasera */
-.card-back-content .price {
-    margin-bottom: 0;
+.card-back-content .price-back {
+    display: inline-block;
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-weight: 700;
+    background: rgba(0,0,0,0.3);
+    padding: 4px 24px;
+    border-radius: 40px;
+    margin-top: 8px;
+    border: 1px solid rgba(224, 169, 109, 0.2);
 }
 
 /* ==========================================
-   FOOTER (PIE DE PÁGINA)
+   SECCIÓN EXTRA (testimonio visual)
+   ========================================== */
+.feature-section {
+    padding: 60px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(6px);
+    padding: 30px 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255, 87, 34, 0.2);
+}
+
+.feature-item i {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.feature-item p {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: 300;
+}
+
+/* ==========================================
+   FOOTER (mejorado)
    ========================================== */
 footer {
-    background-color: #0c0c0c;
-    padding: 50px 20px;
+    background: #080808;
+    padding: 60px 20px 40px;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255,255,255,0.04);
 }
 
 .footer-content {
@@ -268,60 +455,111 @@ footer {
     margin: 0 auto;
 }
 
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--light-color);
+    margin-bottom: 10px;
+}
+
+.footer-logo span {
+    color: var(--primary-color);
+}
+
 .motivational-quote {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 1.3rem;
-    color: #e0a96d; /* Tono cálido elegante para la frase */
+    font-size: 1.2rem;
+    color: var(--gold);
     line-height: 1.8;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.footer-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    margin: 20px auto;
 }
 
 .copyright {
     font-size: 0.85rem;
-    color: #666666;
+    color: #555;
+    letter-spacing: 0.5px;
 }
 
 /* ==========================================
-   BOTÓN FLOTANTE DE WHATSAPP
+   WHATSAPP FLOAT (mejorado)
    ========================================== */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
+    bottom: 28px;
+    right: 28px;
+    background: #25d366;
     color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
     transition: all 0.3s ease;
     z-index: 1000;
     text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.whatsapp-float i {
+    font-size: 2.4rem;
 }
 
 .whatsapp-float:hover {
-    background-color: #20ba5a;
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+    background: #20ba5a;
+    transform: scale(1.1) translateY(-6px);
+    box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
 }
 
 /* ==========================================
-   RESPONSIVO (ADAPTABILIDAD)
+   RESPONSIVO (mejorado)
    ========================================== */
 @media (max-width: 768px) {
+    .hero {
+        min-height: 70vh;
+    }
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: clamp(2.4rem, 8vw, 3.6rem);
+    }
+    .hero-content p {
+        font-size: 1rem;
     }
     .section-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     .menu-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 420px;
         margin: 0 auto;
+    }
+    .card-container {
+        height: 420px;
+    }
+    .hero-actions .btn-primary,
+    .hero-actions .btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
+    .feature-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-back-content p {
+        font-size: 0.85rem;
     }
 }
