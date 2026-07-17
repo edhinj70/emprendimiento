@@ -1,0 +1,327 @@
+/* ==========================================
+   RESET & VARIABLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff5722;     /* Naranja vibrante para dar apetito */
+    --primary-hover: #e04818;
+    --dark-color: #121212;        /* Fondo oscuro elegante */
+    --light-color: #ffffff;
+    --gray-light: #f4f4f4;
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    --font-heading: 'Playfair Display', serif;
+    --font-sans: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: #1a1a1a;
+    color: var(--light-color);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   HEADER / HERO SECTION
+   ========================================== */
+.hero {
+    position: relative;
+    height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 18, 18, 1)), 
+                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+    color: #cccccc;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6);
+}
+
+/* ==========================================
+   MENU CONTENEDOR & GRID
+   ========================================== */
+.menu-container {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+/* ==========================================
+   3D CARD FLIP EFECTO (Solo CSS)
+   ========================================== */
+.card-container {
+    perspective: 1000px; /* Determina la profundidad 3D */
+    height: 450px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Permite a los hijos mantener el 3D */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+/* El gatillo para girar la tarjeta al pasar el cursor o al interactuar */
+.card-container:hover .card,
+.card-container:focus-within .card {
+    transform: rotateY(180deg);
+}
+
+/* Estructura común para ambas caras */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara que está de espaldas */
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* CARA DELANTERA */
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Degradado oscuro para que el texto inicial se lea perfectamente */
+.card-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.2) 100%);
+    padding: 30px;
+    width: 100%;
+}
+
+.card-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.price {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Botón transparente */
+.btn-detail {
+    background: transparent;
+    color: var(--light-color);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-detail:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-color: var(--light-color);
+}
+
+/* CARA TRASERA */
+.card-back {
+    transform: rotateY(180deg); /* Se inicializa volteada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Filtro oscurecido drástico solicitado para resaltar los textos */
+.card-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Capa muy oscura de fondo */
+    z-index: 1;
+}
+
+/* Contenedor del contenido trasero por encima del fondo oscuro */
+.card-back-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-back-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.card-back-content p {
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    overflow-y: auto; /* Evita desbordamiento de texto largo */
+}
+
+/* Conservando el estilo de precio idéntico en la parte trasera */
+.card-back-content .price {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   FOOTER (PIE DE PÁGINA)
+   ========================================== */
+footer {
+    background-color: #0c0c0c;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.motivational-quote {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #e0a96d; /* Tono cálido elegante para la frase */
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+/* ==========================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   ========================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* ==========================================
+   RESPONSIVO (ADAPTABILIDAD)
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

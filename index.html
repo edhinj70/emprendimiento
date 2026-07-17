@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas de Comidas - Sabor que Enamora</title>
+    <!-- Google Fonts para tipografía moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Encabezado / Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Ventas de Comidas</h1>
+            <p>Sabor casero, ingredientes frescos y momentos inolvidables en tu mesa.</p>
+            <a href="#menu" class="btn-primary">Ver Menú</a>
+        </div>
+    </header>
+
+    <!-- Sección del Menú Principal -->
+    <main id="menu" class="menu-container">
+        <h2 class="section-title">Nuestras Especialidades</h2>
+        <div class="menu-grid">
+
+            <!-- Tarjeta 1: Hamburguesa -->
+            <div class="card-container">
+                <div class="card">
+                    <!-- Cara Frontal -->
+                    <div class="card-face card-front" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80');">
+                        <div class="card-overlay">
+                            <div class="card-info">
+                                <h3>Hamburguesa Gourmet</h3>
+                                <span class="price">$12.00</span>
+                                <button class="btn-detail">Ver detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cara Trasera (Detalle) -->
+                    <div class="card-face card-back" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80');">
+                        <div class="card-back-content">
+                            <h3>Hamburguesa Gourmet</h3>
+                            <p>Carne de res premium de 200g madurada, queso cheddar fundido, tocineta ahumada crujiente, cebolla caramelizada y salsa especial de la casa en pan brioche artesanal.</p>
+                            <span class="price">$12.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Pizza -->
+            <div class="card-container">
+                <div class="card">
+                    <!-- Cara Frontal -->
+                    <div class="card-face card-front" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80');">
+                        <div class="card-overlay">
+                            <div class="card-info">
+                                <h3>Pizza Napolitana</h3>
+                                <span class="price">$15.00</span>
+                                <button class="btn-detail">Ver detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cara Trasera (Detalle) -->
+                    <div class="card-face card-back" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80');">
+                        <div class="card-back-content">
+                            <h3>Pizza Napolitana</h3>
+                            <p>Masa madre fermentada por 48 horas, salsa de tomate San Marzano hecha en casa, mozzarella de búfala fresca, hojas de albahaca orgánica y un toque de aceite de oliva virgen extra.</p>
+                            <span class="price">$15.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Pasta -->
+            <div class="card-container">
+                <div class="card">
+                    <!-- Cara Frontal -->
+                    <div class="card-face card-front" style="background-image: url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80');">
+                        <div class="card-overlay">
+                            <div class="card-info">
+                                <h3>Pasta Alfredo</h3>
+                                <span class="price">$10.00</span>
+                                <button class="btn-detail">Ver detalle</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cara Trasera (Detalle) -->
+                    <div class="card-face card-back" style="background-image: url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80');">
+                        <div class="card-back-content">
+                            <h3>Pasta Alfredo</h3>
+                            <p>Pasta fettuccine al dente bañada en una cremosa salsa Alfredo a base de mantequilla, crema de leche fresca y abundante queso parmesano Reggiano, acompañada de pollo a la plancha.</p>
+                            <span class="price">$10.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-content">
+            <p class="motivational-quote">"El ingrediente secreto siempre es el amor, el esfuerzo y las ganas de ver sonreír a quienes prueban nuestra comida."</p>
+            <p class="copyright">&copy; 2026 Ventas de Comidas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/5812345678" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.413 9.863-9.847.002-2.634-1.023-5.11-2.887-6.974-1.864-1.864-4.341-2.887-6.978-2.889-5.442 0-9.866 4.414-9.87 9.851-.001 1.77.481 3.491 1.398 5.018l-.98 3.58 3.684-.965zm10.83-6.241c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
