@@ -3,165 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventas de Comidas · Sabor que Enamora</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Estilos CSS -->
+    <title>Los Sabores de Anny | Restaurante</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- NAV BAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="brand">Sabor<span>.</span></a>
-            <div class="nav-links">
-                <a href="#menu">Menú</a>
-                <a href="#feature">Nosotros</a>
-            </div>
-        </div>
-    </nav>
 
     <!-- HERO SECTION -->
     <header class="hero">
         <div class="hero-content">
-            <span class="badge"><i class="fas fa-fire"></i> Cocina con alma</span>
-            <h1>Sabor que <span class="highlight">enamora</span></h1>
-            <p>Ingredientes frescos, pasión por el detalle y recetas que despiertan los sentidos. Cada plato cuenta una historia.</p>
-            <div class="hero-actions">
-                <a href="#menu" class="btn btn-primary"><i class="fas fa-utensils"></i> Ver menú</a>
-                <a href="#feature" class="btn btn-outline"><i class="fas fa-info-circle"></i> Descubrir más</a>
-            </div>
+            <img src="logo.jpg" alt="Los Sabores de Anny Logo" class="main-logo">
+            <h1>Los Sabores de Anny</h1>
+            <p>Una experiencia culinaria moderna con el sazón que te enamora</p>
+            <a href="#menu" class="btn-primary">Ver Menú</a>
         </div>
     </header>
 
-    <!-- MENÚ PRINCIPAL -->
+    <!-- MENU SECTION -->
     <main id="menu" class="menu-container">
-        <div class="section-header">
-            <p class="subtitle"><i class="fas fa-star"></i> Selección del chef</p>
-            <h2 class="section-title">Nuestras Especialidades</h2>
-        </div>
-
+        <h2 class="section-title">Nuestra Especialidades</h2>
         <div class="menu-grid">
-
-            <!-- Tarjeta 1: Hamburguesa -->
-            <div class="card-container" tabindex="0">
-                <div class="card">
-                    <div class="card-face card-front" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80');">
-                        <div class="card-overlay">
-                            <div class="card-info">
-                                <h3>Hamburguesa Gourmet</h3>
-                                <div class="price-badge">$12.00</div>
-                                <span class="btn-detail">Ver detalle <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-back">
-                        <div class="card-back-content">
-                            <div class="icon-plate"><i class="fas fa-hamburger"></i></div>
-                            <h3>Hamburguesa Gourmet</h3>
-                            <p>Carne de res premium de 200g madurada, queso cheddar fundido, tocineta ahumada crujiente, cebolla caramelizada y salsa especial de la casa en pan brioche artesanal.</p>
-                            <span class="price-back">$12.00</span>
-                        </div>
-                    </div>
+            
+            <!-- Producto 1 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=500');"></div>
+                <div class="card-body">
+                    <h3>Costillas BBQ Especiales</h3>
+                    <p>Costillas de cerdo ahumadas lentamente, bañadas en nuestra salsa barbacoa secreta de la casa.</p>
+                    <span class="price">$14.99</span>
                 </div>
             </div>
 
-            <!-- Tarjeta 2: Pizza -->
-            <div class="card-container" tabindex="0">
-                <div class="card">
-                    <div class="card-face card-front" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80');">
-                        <div class="card-overlay">
-                            <div class="card-info">
-                                <h3>Pizza Napolitana</h3>
-                                <div class="price-badge">$15.00</div>
-                                <span class="btn-detail">Ver detalle <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-back">
-                        <div class="card-back-content">
-                            <div class="icon-plate"><i class="fas fa-pizza-slice"></i></div>
-                            <h3>Pizza Napolitana</h3>
-                            <p>Masa madre fermentada por 48 horas, salsa de tomate San Marzano hecha en casa, mozzarella de búfala fresca, hojas de albahaca orgánica y aceite de oliva virgen extra.</p>
-                            <span class="price-back">$15.00</span>
-                        </div>
-                    </div>
+            <!-- Producto 2 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500');"></div>
+                <div class="card-body">
+                    <h3>Pizza Gourmet Anny</h3>
+                    <p>Masa artesanal, salsa de tomate natural, mozzarella fresca, jamón serrano y un toque de rúcula.</p>
+                    <span class="price">$12.50</span>
                 </div>
             </div>
 
-            <!-- Tarjeta 3: Pasta -->
-            <div class="card-container" tabindex="0">
-                <div class="card">
-                    <div class="card-face card-front" style="background-image: url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80');">
-                        <div class="card-overlay">
-                            <div class="card-info">
-                                <h3>Pasta Alfredo</h3>
-                                <div class="price-badge">$10.00</div>
-                                <span class="btn-detail">Ver detalle <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-back">
-                        <div class="card-back-content">
-                            <div class="icon-plate"><i class="fas fa-spoon"></i></div>
-                            <h3>Pasta Alfredo</h3>
-                            <p>Pasta fettuccine al dente bañada en una cremosa salsa Alfredo con mantequilla, crema de leche fresca y abundante queso parmesano Reggiano, acompañada de pollo a la plancha.</p>
-                            <span class="price-back">$10.00</span>
-                        </div>
-                    </div>
+            <!-- Producto 3 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500');"></div>
+                <div class="card-body">
+                    <h3>Risotto de Champiñones</h3>
+                    <p>Arroz cremoso cocinado a la perfección con champiñones silvestres y queso parmesano madurado.</p>
+                    <span class="price">$11.00</span>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500');"></div>
+                <div class="card-body">
+                    <h3>Hamburguesa Premium Brass</h3>
+                    <p>200g de carne de res seleccionada, queso cheddar fundido, tocino crujiente y aderezo especial.</p>
+                    <span class="price">$9.95</span>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500');"></div>
+                <div class="card-body">
+                    <h3>Salmón en Salsa de Cítricos</h3>
+                    <p>Filete de salmón fresco a la plancha, bañado en reducción de naranja y finas hierbas.</p>
+                    <span class="price">$16.50</span>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500');"></div>
+                <div class="card-body">
+                    <h3>Bowl Saludable de Pollo</h3>
+                    <p>Mix de verdes, pechuga de pollo grillada, quinoa, aguacate, tomates cherry y aderezo sésamo.</p>
+                    <span class="price">$8.50</span>
+                </div>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500');"></div>
+                <div class="card-body">
+                    <h3>Pasta Alfredo Tradicional</h3>
+                    <p>Fettuccine en salsa cremosa a base de mantequilla y queso parmesano, acompañada de pan de ajo.</p>
+                    <span class="price">$10.00</span>
+                </div>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=500');"></div>
+                <div class="card-body">
+                    <h3>Cóctel de Autores</h3>
+                    <p>Refrescante combinación de destilados premium con frutos rojos y un toque secreto de Anny.</p>
+                    <span class="price">$6.00</span>
+                </div>
+            </div>
+
+            <!-- Producto 9 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500');"></div>
+                <div class="card-body">
+                    <h3>Volcán de Chocolate</h3>
+                    <p>Bizcocho suave con corazón de chocolate derretido, servido con una bola de helado de vainilla.</p>
+                    <span class="price">$5.50</span>
+                </div>
+            </div>
+
+            <!-- Producto 10 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500');"></div>
+                <div class="card-body">
+                    <h3>Donas Glaseadas Especiales</h3>
+                    <p>Deliciosas donas artesanales con variedad de coberturas crujientes hechas a diario.</p>
+                    <span class="price">$4.00</span>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- SECCIÓN CARACTERÍSTICAS -->
-    <section id="feature" class="feature-section">
-        <div class="section-header">
-            <p class="subtitle"><i class="fas fa-heart"></i> Por qué elegirnos</p>
-            <h2 class="section-title">Hecho con Pasión</h2>
-        </div>
-        <div class="feature-grid">
-            <div class="feature-item">
-                <div class="icon-wrapper"><i class="fas fa-leaf"></i></div>
-                <h4>Ingredientes frescos</h4>
-                <p>Seleccionamos los mejores productos locales para cada receta.</p>
-            </div>
-            <div class="feature-item">
-                <div class="icon-wrapper"><i class="fas fa-clock"></i></div>
-                <h4>Preparación al momento</h4>
-                <p>Cada plato se cocina en el instante, con el cariño de siempre.</p>
-            </div>
-            <div class="feature-item">
-                <div class="icon-wrapper"><i class="fas fa-star"></i></div>
-                <h4>Sabor inolvidable</h4>
-                <p>Recetas únicas que despiertan emociones y recuerdos.</p>
-            </div>
-            <div class="feature-item">
-                <div class="icon-wrapper"><i class="fas fa-truck"></i></div>
-                <h4>Envío rápido</h4>
-                <p>Llegamos a tu puerta con la misma calidez de casa.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PIE DE PÁGINA -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">Sabor<span>.</span>que enamora</div>
-            <p class="motivational-quote">"El ingrediente secreto siempre es el amor, el esfuerzo y las ganas de ver sonreír a quienes prueban nuestra comida."</p>
-            <div class="footer-divider"></div>
-            <p class="copyright">&copy; 2026 Ventas de Comidas · Todos los derechos reservados</p>
+            <p class="motivation-quote">"La cocina es un lienzo donde los sabores se mezclan con el alma; cocinamos con pasión para alimentar tus mejores momentos."</p>
+            <p class="copyright">&copy; 2026 Los Sabores de Anny. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/584161610784" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/5812345678" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat en WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
